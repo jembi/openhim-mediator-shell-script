@@ -4,11 +4,11 @@
 OpenHIM Mediator for executing shell scripts.
 
 ## Usage
-Checkout from GitHub
+Install via npm
 ```
-git clone https://github.com/jembi/openhim-mediator-shell-script.git
-npm install
+npm install -g openhim-mediator-shell-script
 ```
+(note this will need root/sudo permission)
 
 Create an appropriate location for you scripts (only scripts in this location will be allowed to be executed)
 ```
@@ -22,9 +22,9 @@ mv default.json /etc/openhim/mediator-shell-script.json
 ```
 Edit the values in this config according to your setup.
 
-Execute the mediator with the argument `--conf /etc/openhim/mediator-shell-script.json`, e.g.
+Run the mediator:
 ```
-npm start -- --conf /etc/openhim/mediator-shell-script.json
+openhim-mediator-shell-script --conf /etc/openhim/mediator-shell-script.json
 ```
 
 Now you can setup your HIM channels and the mediator config via the console.
