@@ -2,10 +2,24 @@
   "name": "openhim-mediator-shell-script",
   "version": "0.9.0",
   "description": "OpenHIM Mediator for executing shell scripts",
+  "author": "Jembi Health Systems NPC",
+  "homepage": "https://github.com/jembi/openhim-mediator-shell-script",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jembi/openhim-mediator-shell-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jembi/openhim-mediator-shell-script/issues"
+  },
   "scripts": {
+    "start": "node lib",
     "prepublish": "grunt build",
     "test": "grunt test"
   },
+  "bin": {
+    "openhim-mediator-shell-script": "lib/index.js"
+  },
+  "main": "lib/index.js",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
@@ -29,5 +43,11 @@
     "grunt-express-server": "^0.5.2",
     "grunt-mocha-cli": "^2.0.0",
     "should": "^8.2.2"
-  }
+  },
+  "keywords": [
+    "openhim",
+    "mediator",
+    "bash"
+  ],
+  "license": "MPL-2.0"
 }
