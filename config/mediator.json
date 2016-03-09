@@ -1,0 +1,49 @@
+{
+  "urn": "urn:mediator:shell-script",
+  "version": "0.9.0",
+  "name": "OpenHIM Shell Script Mediator",
+  "description": "OpenHIM Mediator for executing shell scripts",
+  "endpoints": [
+    {
+      "name": "Shell Script Mediator",
+      "host": "localhost",
+      "port": "5013",
+      "type": "http"
+    }
+  ],
+  "configDefs": [
+    {
+      "param": "scripts",
+      "displayName": "Scripts",
+      "description": "Scripts to execute. A script is exposed on a particular endpoint on the mediator, and execution is triggered by issuing a GET on that endpoint (which polling channels will do)",
+      "type": "struct",
+      "array": true,
+      "template": [
+        {
+          "param": "endpoint",
+          "displayName": "Endpoint",
+          "description": "The endpoint on which to make the script available",
+          "type": "string"
+        },
+        {
+          "param": "filename",
+          "displayName": "Filename",
+          "description": "The script filename. The script must be located in the configured scripts directory.",
+          "type": "string"
+        },
+        {
+          "param": "arguments",
+          "displayName": "Arguments",
+          "description": "Arguments to be passed to the script",
+          "type": "map"
+        },
+        {
+          "param": "env",
+          "displayName": "Environment Variables",
+          "description": "Environment variables to initialize before script execution",
+          "type": "map"
+        }
+      ]
+    }
+  ]
+}
