@@ -1,6 +1,6 @@
 {
   "name": "openhim-mediator-shell-script",
-  "version": "0.9.0",
+  "version": "0.9.5",
   "description": "OpenHIM Mediator for executing shell scripts",
   "author": "Jembi Health Systems NPC",
   "homepage": "https://github.com/jembi/openhim-mediator-shell-script",
@@ -17,7 +17,7 @@
     "test": "grunt test"
   },
   "bin": {
-    "openhim-mediator-shell-script": "lib/index.js"
+    "openhim-mediator-shell-script": "./bin/openhim-mediator-shell-script.js"
   },
   "main": "lib/index.js",
   "dependencies": {
