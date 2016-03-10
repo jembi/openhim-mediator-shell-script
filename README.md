@@ -40,11 +40,13 @@ Note that the mediator *process* needs execute permission for the script.
 With the script in place we can setup the channel and mediator in console. Go to *Mediators* and click on the *OpenHIM Shell Script Mediator* item. From there click on the blue *Configure Mediator* button.
 
 Add a new script and give it an endpoint on which to trigger execution. Enter the name of the script `task.sh`. Any required arguments or environment variables can be added as well.
-![mediator-conf](https://cloud.githubusercontent.com/assets/1872071/13661526/f272e3ac-e69b-11e5-975c-7291de521f22.png)
+![screen shot 2016-03-10 at 09 12 34](https://cloud.githubusercontent.com/assets/1872071/13662056/4ab49908-e6a0-11e5-90d3-bb10298bf95b.png)
+
 After you hit the *Save Changes* button, the mediator will automatically pick up on the new config.
 
 Now we can setup a new channel that will call the script on a daily basis. Add a new polling channel:
 ![channel-basic-info](https://cloud.githubusercontent.com/assets/1872071/13661621/f0066d2c-e69c-11e5-9e8c-b7b7ad5c15b8.png)
+
 Give it an access control permission such as `internal`.
 
 Add the script route by picking the *OpenHIM Shell Script Mediator* option in *Add Mediator Route*. Edit the route and set *Route Path* to `/task`:
