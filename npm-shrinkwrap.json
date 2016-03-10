@@ -1,6 +1,6 @@
 {
   "name": "openhim-mediator-shell-script",
-  "version": "0.9.6",
+  "version": "1.0.0",
   "dependencies": {
     "body-parser": {
       "version": "1.15.0",
