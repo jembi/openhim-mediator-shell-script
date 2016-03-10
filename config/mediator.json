@@ -1,6 +1,6 @@
 {
   "urn": "urn:mediator:shell-script",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "name": "OpenHIM Shell Script Mediator",
   "description": "OpenHIM Mediator for executing shell scripts",
   "endpoints": [
