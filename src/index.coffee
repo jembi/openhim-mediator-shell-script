@@ -64,7 +64,7 @@ handler = (script) -> (req, res) ->
         body: out
         timestamp: new Date()
     }
- 
+
 
 # Express
 
@@ -99,6 +99,7 @@ startExpress = ->
 
     server = app.listen config.getConf().server.port, config.getConf().server.hostname, ->
       logger.info "[#{process.env.NODE_ENV}] #{config.getMediatorConf().name} running on port #{server.address().address}:#{server.address().port}"
+    server.timeout = 0
 
 restartExpress = ->
   if server
@@ -139,6 +140,6 @@ if process.env.NODE_ENV isnt 'test'
       config.updateConf newConfig
       debugLogConfig()
       startExpress()
- 
+
 
 exports.app = app
