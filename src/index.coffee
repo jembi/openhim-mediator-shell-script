@@ -104,7 +104,8 @@ startExpress = ->
 restartExpress = ->
   if server
     logger.info "Re-initializing express server ..."
-    server.close startExpress
+    server.close() # existing connection will still be processed async
+    startExpress() # start server with new config
 
 
 debugLogConfig = ->
