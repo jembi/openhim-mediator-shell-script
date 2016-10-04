@@ -46,7 +46,9 @@ handler = (script) -> (req, res) ->
   logger.info "[#{openhimTransactionID}] Executing #{scriptCmd} #{args.join ' '}"
 
   out = ""
-  appendToOut = (data) -> out = "#{out}#{data}"
+  appendToOut = (data) ->
+    out = "#{out}#{data}"
+    logger.info "[#{openhimTransactionID}] Script output: #{data}"
   cmd.stdout.on 'data', appendToOut
   cmd.stderr.on 'data', appendToOut
 
