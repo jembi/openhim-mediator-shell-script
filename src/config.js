@@ -5,13 +5,13 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-let ops;
-const fs = require('fs');
-const path = require('path');
-const stdio = require('stdio');
+let ops
+const fs = require('fs')
+const path = require('path')
+const stdio = require('stdio')
 
-let conf = {};
-let mediatorConf = {};
+let conf = {}
+let mediatorConf = {}
 
 if (process.env.NODE_ENV !== 'test') {
   ops = stdio.getopt({
@@ -25,12 +25,10 @@ if (process.env.NODE_ENV !== 'test') {
       args: 1,
       description: 'The mediator configuration to use. See config/mediator.json for an example.'
     }
-  });
+  })
 }
 
-
-let confFile = null;
-
+let confFile = null
 
 // Update the conf map with updated values
 // Keys that contain dashes will be split and nested in the map,
@@ -41,61 +39,58 @@ let confFile = null;
 // https://github.com/jembi/openhim-core-js/issues/566
 const updateConf = config =>
   (() => {
-    const result = [];
+    const result = []
     for (var param in config) {
-      var _spl = param.split('-');
-      var _confI = conf;
+      var _spl = param.split('-')
+      var _confI = conf
 
       result.push((() => {
-        const result1 = [];
+        const result1 = []
         for (let i = 0; i < _spl.length; i++) {
-          const key = _spl[i];
-          if (i === (_spl.length-1)) {
-            result1.push(_confI[key] = config[param]);
+          const key = _spl[i]
+          if (i === (_spl.length - 1)) {
+            result1.push(_confI[key] = config[param])
           } else {
-            if (!_confI[key]) { _confI[key] = {}; }
-            result1.push(_confI = _confI[key]);
+            if (!_confI[key]) { _confI[key] = {} }
+            result1.push(_confI = _confI[key])
           }
         }
-        return result1;
-      })());
+        return result1
+      })())
     }
-    return result;
+    return result
   })()
-;
 
-
-const load = function() {
+const load = function () {
   // conf
-  let mediatorConfFile;
+  let mediatorConfFile
   if ((ops != null ? ops.conf : undefined) != null) {
-    confFile = ops.conf;
+    confFile = ops.conf
   } else if (process.env.NODE_ENV === 'development') {
-    confFile = path.resolve(`${global.appRoot}/config`, 'development.json');
+    confFile = path.resolve(`${global.appRoot}/config`, 'development.json')
   } else if (process.env.NODE_ENV === 'test') {
-    confFile = path.resolve(`${global.appRoot}/config`, 'test.json');
+    confFile = path.resolve(`${global.appRoot}/config`, 'test.json')
   } else {
-    confFile = path.resolve(`${global.appRoot}/config`, 'default.json');
+    confFile = path.resolve(`${global.appRoot}/config`, 'default.json')
   }
 
-  conf = JSON.parse(fs.readFileSync(confFile));
+  conf = JSON.parse(fs.readFileSync(confFile))
 
   // mediator conf
   if ((ops != null ? ops.mediatorConf : undefined) != null) {
-    mediatorConfFile = ops.mediatorConf;
+    mediatorConfFile = ops.mediatorConf
   } else {
-    mediatorConfFile = path.resolve(`${global.appRoot}/config`, 'mediator.json');
+    mediatorConfFile = path.resolve(`${global.appRoot}/config`, 'mediator.json')
   }
 
-  mediatorConf = JSON.parse(fs.readFileSync(mediatorConfFile));
+  mediatorConf = JSON.parse(fs.readFileSync(mediatorConfFile))
   if (mediatorConf.config != null) {
-    return updateConf(mediatorConf.config);
+    return updateConf(mediatorConf.config)
   }
-};
+}
 
-
-exports.getConf = () => conf;
-exports.getConfName = () => confFile;
-exports.getMediatorConf = () => mediatorConf;
-exports.load = load;
-exports.updateConf = updateConf;
+exports.getConf = () => conf
+exports.getConfName = () => confFile
+exports.getMediatorConf = () => mediatorConf
+exports.load = load
+exports.updateConf = updateConf

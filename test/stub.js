@@ -1,7 +1,8 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
+const describe = require('mocha').describe
+const it = require('mocha').it
 
-describe('test stub', () => it('should work', done => done()));
+describe('test stub', () => {
+  it('should work', done => {
+    done()
+  })
+})

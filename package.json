@@ -15,7 +15,8 @@
     "start": "npm run prepublish; node --harmony lib/",
     "prepublish": "npm run clean; babel src --out-dir lib -s",
     "clean": "rimraf lib/",
-    "test": "mocha"
+    "test": "mocha",
+    "test:lint": "standard src/**/*.js"
   },
   "bin": {
     "openhim-mediator-shell-script": "./bin/openhim-mediator-shell-script.js"
@@ -37,7 +38,8 @@
     "babel-register": "^6.26.0",
     "mocha": "^4.0.1",
     "rimraf": "^2.6.2",
-    "should": "^8.2.2"
+    "should": "^8.2.2",
+    "standard": "^10.0.3"
   },
   "keywords": [
     "openhim",

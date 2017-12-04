@@ -1,1 +1,1 @@
-require('../src/init');
+require('../src/init')
