@@ -9,9 +9,9 @@
   "openhim": {
     "api" : {
       "username": "root@openhim.org",
-      "password": "openhim-password",
+      "password": "openhim-password1",
       "apiURL": "https://localhost:8080",
-      "trustSelfSigned": false
+      "trustSelfSigned": true
     }
   },
   "scriptsDirectory": "/opt/openhim-shell-scripts"
