@@ -12,8 +12,10 @@
     "url": "https://github.com/jembi/openhim-mediator-shell-script/issues"
   },
   "scripts": {
-    "start": "node src",
-    "test": "mocha test"
+    "start": "npm run prepublish; node --harmony lib/",
+    "prepublish": "npm run clean; babel src --out-dir lib -s",
+    "clean": "rimraf lib/",
+    "test": "mocha"
   },
   "bin": {
     "openhim-mediator-shell-script": "./bin/openhim-mediator-shell-script.js"
@@ -30,7 +32,11 @@
     "winston": "^2.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "mocha": "^4.0.1",
+    "rimraf": "^2.6.2",
     "should": "^8.2.2"
   },
   "keywords": [
