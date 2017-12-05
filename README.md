@@ -62,7 +62,7 @@ npm install
 ```
 To run the mediator in development mode
 ```
-grunt serve
+npm start
 ```
 or to run the tests
 ```
