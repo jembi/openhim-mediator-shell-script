@@ -53,7 +53,7 @@ const handler = script => function (req, res) {
   const scriptCmd = path.join(config.getConf().scriptsDirectory, script.filename)
   const args = buildArgs(script)
 
-  const cmd = spawn(scriptCmd, args, {env: setupEnv(script)})
+  const cmd = spawn(scriptCmd, args, {env: setupEnv(script), shell: true})
   logger.info(`[${openhimTransactionID}] Executing ${scriptCmd} ${args.join(' ')}`)
 
   let out = ''
