@@ -11,7 +11,7 @@
       "username": "root@openhim.org",
       "password": "openhim-password",
       "apiURL": "https://localhost:8080",
-      "trustSelfSigned": false
+      "trustSelfSigned": true
     }
   },
   "scriptsDirectory": "/opt/openhim-shell-scripts"

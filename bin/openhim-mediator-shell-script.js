@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-var path = require('path');
-var fs   = require('fs');
-require(path.join(path.dirname(fs.realpathSync(__filename)), '../lib'));
+var path = require('path')
+var fs = require('fs')
+require(path.join(path.dirname(fs.realpathSync(__filename)), '../src'))
