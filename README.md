@@ -35,6 +35,12 @@ docker pull jembi/openhim-mediator-shell-script
 
 The default configuration file `config/default.json` will have to be mounted to the container once updated with correct details. The target folder for the mount is `ect/openhim/`. The scripts to be executed will also be added via mounting or docker volumes to the folder `/opt/openhim-shell-scripts` and then the container can be run.
 
+To run execute the command below
+
+```bash
+docker run -v <PATH_TO_CONFIG_FILES>:/etc/openhim  -v <PATH_TO_SCRIPTS>:/otp/openhim-shell-scripts -itp 5013:5013 jembi/openhim-mediator-shell-script
+```
+
 Now you can setup your HIM channels and the mediator config via the console.
 
 ## Polling Channel Example
