@@ -14,5 +14,5 @@
       "trustSelfSigned": true
     }
   },
-  "scriptsDirectory": "/opt/openhim-shell-scripts"
+  "scriptsDirectory": "/app/openhim-shell-scripts"
 }
