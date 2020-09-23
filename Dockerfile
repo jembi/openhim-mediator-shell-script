@@ -9,6 +9,6 @@ COPY package.json yarn.lock ./
 RUN yarn
 
 # Create folder for the shell scripts
-RUN mkdir /opt/openhim-shell-scripts
+RUN mkdir /app/openhim-shell-scripts
 
 CMD ["yarn", "start"]
