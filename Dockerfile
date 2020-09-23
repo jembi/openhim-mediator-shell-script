@@ -1,5 +1,7 @@
 FROM node:erbium-alpine
 
+WORKDIR /app
+
 COPY . .
 
 RUN yarn
