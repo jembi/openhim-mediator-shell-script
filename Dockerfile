@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+COPY package.json yarn.lock ./
+
 RUN yarn
 
 # Create folder for the shell scripts
