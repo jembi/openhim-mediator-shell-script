@@ -1,6 +1,6 @@
 {
   "name": "openhim-mediator-shell-script",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "OpenHIM Mediator for executing shell scripts",
   "author": "Jembi Health Systems NPC",
   "homepage": "https://github.com/jembi/openhim-mediator-shell-script",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node --harmony src/",
-    "test": "mocha",
+    "test": "NODE_ENV=test mocha",
     "test:lint": "standard src/**/*.js"
   },
   "bin": {
@@ -21,19 +21,19 @@
   },
   "main": "src/index.js",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "moment": "^2.11.2",
-    "openhim-mediator-utils": "^0.2.2",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "openhim-mediator-utils": "^0.4.0",
     "request": "^2.65.0",
-    "source-map-support": "^0.4.0",
-    "stdio": "^0.2.7",
-    "winston": "^2.2.0"
+    "source-map-support": "^0.5.21",
+    "stdio": "^2.1.1",
+    "winston": "^3.10.0"
   },
   "devDependencies": {
-    "mocha": "^4.0.1",
-    "should": "^8.2.2",
-    "standard": "^10.0.3"
+    "mocha": "^10.2.0",
+    "should": "^13.2.3",
+    "standard": "^17.1.0"
   },
   "keywords": [
     "openhim",
