@@ -94,7 +94,7 @@ const startExpress = () =>
   getAvailableScripts(function (err, scriptNames) {
     if (err) {
       logger.error(err)
-      process.exit(1)
+      throw err
     }
 
     logger.info(`Available scripts: ${(scriptNames.filter(d => !d.startsWith('.'))).join(', ')}`)
@@ -144,7 +144,7 @@ if (process.env.NODE_ENV !== 'test') {
   mediatorUtils.registerMediator(config.getConf().openhim.api, config.getMediatorConf(), function (err) {
     if (err) {
       logger.error(err)
-      process.exit(1)
+      throw err
     }
 
     logger.info('Mediator has been successfully registered')

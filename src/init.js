@@ -9,13 +9,17 @@ config.load()
 
 const logger = require('winston')
 
-logger.remove(logger.transports.Console)
-logger.add(logger.transports.Console, {
-  colorize: true,
-  timestamp: true,
+var winstonLogFormat = logger.format.printf(function(info) {
+  return `${info.timestamp} ${info.level}: ${info.message}`;
+});
+
+logger.remove(new logger.transports.Console());
+
+logger.add(new logger.transports.Console({
+  format: logger.format.combine(logger.format.timestamp(), logger.format.colorize(), winstonLogFormat),
   level: 'info'
-}
-)
+}));
+
 
 logger.info(`Initialized configuration from '${config.getConfName()}'`)
 
