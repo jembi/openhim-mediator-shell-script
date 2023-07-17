@@ -12,7 +12,7 @@ npm install -g openhim-mediator-shell-script
 
 Create an appropriate location for you scripts (only scripts in this location will be allowed to be executed)
 ```
-mkdir /opt/openhim-shell-scripts
+mkdir -p /app/openhim-shell-scripts
 ```
 Next get a copy of the default config and place it in an appropriate location, e.g.
 ```
@@ -33,7 +33,7 @@ Installation can also be done via docker. One simply has to pull the image
 docker pull jembi/openhim-mediator-shell-script
 ```
 
-The default configuration file `config/default.json` will have to be mounted to the container once updated with correct details. The target folder for the mount is `ect/openhim/`. The scripts to be executed will also be added via mounting or docker volumes to the folder `/opt/openhim-shell-scripts` and then the container can be run.
+The default configuration file `config/default.json` will have to be mounted to the container once updated with correct details. The target folder for the mount is `ect/openhim/`. The scripts to be executed will also be added via mounting or docker volumes to the folder `/app/openhim-shell-scripts` and then the container can be run.
 
 To run execute the command below
 
@@ -46,8 +46,8 @@ Now you can setup your HIM channels and the mediator config via the console.
 ## Polling Channel Example
 Say we have a maintenance script `task.sh` that needs to execute on a daily basis. Copy the script into the mediator scripts directory and give it execute permission:
 ```
-cp task.sh /opt/openhim-shell-scripts
-chmod +x /opt/openhim-shell-scripts/task.sh
+cp task.sh /app/openhim-shell-scripts
+chmod +x /app/openhim-shell-scripts/task.sh
 ```
 Note that the mediator *process* needs execute permission for the script.
 
