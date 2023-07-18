@@ -12,7 +12,8 @@
     "url": "https://github.com/jembi/openhim-mediator-shell-script/issues"
   },
   "scripts": {
-    "start": "node --harmony src/",
+    "start": "node --harmony src/ --conf=config/default.json -- --mediatorConf=config/mediator.json",
+    "start:dev": "node --harmony src/ --conf=config/development.json -- --mediatorConf=config/mediator.json",
     "test": "NODE_ENV=test mocha",
     "test:lint": "standard src/**/*.js"
   },
