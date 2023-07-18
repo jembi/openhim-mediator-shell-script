@@ -6,6 +6,10 @@ COPY . .
 
 COPY package.json yarn.lock ./
 
+RUN apt update
+
+RUN apt install -y zip
+
 RUN yarn
 
 # Create folder for the shell scripts
